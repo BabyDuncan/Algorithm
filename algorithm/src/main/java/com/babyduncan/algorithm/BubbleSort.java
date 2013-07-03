@@ -1,16 +1,15 @@
 package com.babyduncan.algorithm;
 
 /**
- * 冒泡排序，这个是不是冒泡排序呢？
+ * 冒泡排序
+ * <p/>
  * User: guohaozhao (guohaozhao@sohu-inc.com)
- * Date: 13-7-2 17:36
+ * Date: 13-7-2 17:56
  */
 public class BubbleSort {
 
-
     public static void main(String... args) {
-
-        int[] array = {1, 2, 32, 12, 34, 543, 1434, 565, 777};
+        int[] array = {-1, 12, 34, 123, 435, 9876, 0};
 
         sort(array);
 
@@ -21,12 +20,12 @@ public class BubbleSort {
     }
 
     private static void sort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i; j < array.length; j++) {
-                if (array[j] > array[i]) {
-                    array[j] = array[i] ^ array[j];
-                    array[i] = array[i] ^ array[j];
-                    array[j] = array[i] ^ array[j];
+        for (int i = 1; i < array.length; i++) {
+            for (int j = 0; j < array.length - i; j++) {
+                if (array[j] < array[j + 1]) {
+                    array[j] = array[j] ^ array[j + 1];
+                    array[j + 1] = array[j] ^ array[j + 1];
+                    array[j] = array[j] ^ array[j + 1];
                 }
             }
         }
